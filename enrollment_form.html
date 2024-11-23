@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Student Enrollment Form"</title>
+    <style>
+        body{
+            background: url("./image/DLL.jpg") no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        .Instructions {
+            background: url("./image/background.jpg") no-repeat center center/cover;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            /* background-color: #4CAF50; */
+            text-align: justify;
+            color: #ffeeee;
+            padding: 1rem;
+            border-radius: 1%;
+            
+        }
+        
+
+        .Instructions hr {
+            color: #ffffff;
+            height: auto;
+            width: 50%;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .Instructions h1 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 4rem;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .Instructions h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-left: 10%;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+        }
+        
+        .Instructions ol {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-left: 15%;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        form {
+            display: flex;
+            max-width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+        }
+
+        form .Form-Section{
+            flex-direction: row;
+            display: flex;
+            width: 100%;
+        }
+
+        form label {
+            font-weight: inherit;
+        }
+
+        form input, form select, form button {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form .radio-group, form .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form .Input-Fields-Section {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding-right: 5%;
+
+        }
+
+        form .Interest-Section{
+            display: inline;
+            flex-direction: column;
+        }
+
+
+        .checkbox-group input{
+            display: inline-block;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .Gender input{
+            display: inline-block;
+            width: auto;
+            width: 10px;
+            margin-right: 10px;
+        }
+
+        
+        .gender-area .Gender{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .gender-area .Gender .Female{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .submit-btn{
+            display: flex;
+            flex-direction: row;
+        }
+
+
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;        
+        }
+
+
+        tr:nth-child(2) {
+            background-color:#a6e4a8;
+   
+        }
+
+        tr:nth-child(4) {
+            background-color: #a6e4a8;
+      
+        }
+
+        
+
+
+        @media (max-width:700px) {
+            form {
+                flex-direction: column;
+            }
+            .Instructions h1{
+                font-size: 3rem;
+            }
+
+            .Instructions hr{
+                width: 100%;
+            }
+
+            .Instructions h2 {
+            font-size: 1.5rem;
+            margin-left: 10%;
+            margin-top: 7%;
+            }
+            
+            .Instructions ol {
+                font-size: 1rem;
+                margin-left: 15%;
+            }
+
+            table {
+            width: 100%; /* Adjust table width to fit smaller screens */
+            font-size: 0.8rem; /* Reduce font size */
+            }
+
+            th, td {
+                padding: 5px; /* Reduce cell padding */
+            }
+
+            table, th, td {
+                border: 1px solid #ccc; /* Ensure borders remain visible */
+            }
+            
+            /* Optional: Hide less important columns */
+            td:nth-child(4), th:nth-child(4), 
+            td:nth-child(6), th:nth-child(6) {
+                display: none; /* Hides Age and Course columns */
+            }
+        }
+
+            
+        
+
+    </style>
+</head>
+<section class="Instructions">
+    <h1> Enrollment Form </h1>
+    <hr>
+    <h2>Instructions </h2>
+    <ol>
+        <li>  Fill in the form fields. </li>
+        <li>  Check your interests. </li>
+        <li>  Click "Enroll Now" to submit.</li>
+    </ol>
+</section>
+    <body>
+        <form id="enrollment-form">
+            <section class="Form-Section">
+                <section class="Input-Fields-Section">
+                    <h2>Input Fields</h2>
+                    <div class="Input-Field">
+                        <label for="name"> Fullname :</label>
+                        <input type="text" id="name" placeholder="Fullname">
+                        <label for="email"> Email Address :</label>
+                        <input type="text" id="email" placeholder="Email Address">
+                        <label for="Age"> Age :</label>
+                        <input type="number" id="Age" placeholder="Age">
+                    </div>
+                    <div>
+                        <label for="course">Course : </label>
+                        <select name="Course" id="course">
+                            <option value="BSIT">BSIT</option>
+                            <option value="DHRS">DHRS</option>
+                            <option value="BSA">BSA</option>
+                            <option value="BSPA">BSPA</option>
+                            <option value="BSAIS">BSAIS</option>
+                            <option value="BSE">BSE</option>
+                            <option value="ABELS">ABELS</option>
+                        </select>
+                    </div>
+                    <div class="gender-area">
+                        <label>Gender</label>
+                        <div class="Gender" id="Male">
+                            <input type="radio" name="sex" value="male" id="male">
+                            <label style="font-weight: 400;" for="male">Male</label>
+                        </div> 
+                        
+                        <div class="Gender" id="Female">
+                            <input type="radio" name="sex" value="female" id="male">
+                            <label style="font-weight: 400;" for="male">Female</label>
+                        </div>
+
+                    </div>
+                </section>
+                <section class="Interest-Section">
+                    <h2>Interest</h2>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interest" value="Web Development"> Web Development</label>
+                        <label><input type="checkbox" name="interest" value="Data Science"> Data Science</label>
+                        <label><input type="checkbox" name="interest" value="Networking"> Networking</label>
+                        <label><input type="checkbox" name="interest" value="Graphic Design"> Graphic Design</label>
+                        <label><input type="checkbox" name="interest" value="Cyber Security"> Cyber Security</label>
+                    </div>
+                </section>
+            </section>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Enroll Now!</button>
+                </div>  
+        </form>
+        <h3>Enrolled Students</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Course</th>
+                    <th>Interests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Paul Naynes</td>
+                    <td>johncena@example.com</td>
+                    <td>21</td>
+                    <td>Male</td>
+                    <td>BSIT</td>
+                    <td>Web Development, Networking</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane jones jones</td>
+                    <td>jones_diwata@example.com</td>
+                    <td>23</td>
+                    <td>Female</td>
+                    <td>BSSW</td>
+                    <td>Data Science</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>diwata_pares</td>
+                    <td>pares_diwata@example.com</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>BSPA</td>
+                    <td>Graphic Design</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Rose Vinegar</td>
+                    <td>Rosmar@example.com</td>
+                    <td>24</td>
+                    <td>Female</td>
+                    <td>BSIT</td>
+                    <td>Web Development, Data Science</td>
+                </tr>
+            </tbody>
+        </table>
+    
+</body>
+</html>
